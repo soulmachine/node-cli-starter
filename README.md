@@ -4,10 +4,11 @@ Node.js CLI project template.
 
 ## Table of Contents
 
-1. [Create a Hello World project](#step1-create-a-hello-world-project)
-1. [Install command to `PATH`](#step1-install-command-to-path)
-1. [.editorconfig](#editorconfig)
-1. [ESLint](#eslint)
+1. [Create a Hello World project](#1-create-a-hello-world-project)
+1. [Install command to `PATH`](#2-install-command-to-path)
+1. [.editorconfig](#3-editorconfig)
+1. [ESLint](#4-eslint)
+1. [Must-have libraries](#5-must-have-libraries)
 
 ## 1. Create a Hello World project
 
@@ -151,7 +152,7 @@ Better add a `.gitattributes` file to the root of your repository to force every
 
 ## 4. ESLint
 
-## 5. Must-have librarys
+## 5. Must-have libraries
 
 * [chalk](https://www.npmjs.com/package/chalk): colorizes text on terminal.
 * [yargs](https://www.npmjs.com/package/yargs): parsing arguments and generating an elegant user interface.
