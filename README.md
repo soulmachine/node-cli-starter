@@ -137,12 +137,10 @@ end_of_line = crlf
 
 With two exceptions:
 
-* Windows batch files(`.cmd` and `.bat`) require `CRLF` line endings.
 * Do NOT trim trailing whtespaces for Markdown files.
+* Windows batch files(`.cmd` and `.bat`) require `CRLF` line endings.
 
-**`LF` or `CRLF` ?**
-
-Better add a `.gitattributes` file to the root of your repository to force everything to be `LF`, except for Windows batch files that require `CRLF`:
+Add a `.gitattributes` file to the root of your repository to force everything to be `LF`, except for Windows batch files that require `CRLF`:
 
 ```text
 * text=auto eol=lf
