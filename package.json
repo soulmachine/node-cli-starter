@@ -1,0 +1,35 @@
+{
+  "name": "node-cli-starter",
+  "version": "1.0.0",
+  "description": "Node.js CLI project template",
+  "main": "index.js",
+  "bin": {
+    "hello-world": "./src/main/index.js",
+    "command2": "./src/main/command2.js"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.7"
+  },
+  "scripts": {
+    "start": "node ./src/main/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soulmachine/node-cli-starter.git"
+  },
+  "keywords": [
+    "cli",
+    "node",
+    "starter"
+  ],
+  "author": "soulmachine",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/soulmachine/node-cli-starter/issues"
+  },
+  "homepage": "https://github.com/soulmachine/node-cli-starter"
+}
