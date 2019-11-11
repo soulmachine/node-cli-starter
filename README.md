@@ -6,6 +6,8 @@ Node.js CLI project template.
 
 1. [Create a Hello World project](#step1-create-a-hello-world-project)
 1. [Install command to `PATH`](#step1-install-command-to-path)
+1. [.editorconfig](#editorconfig)
+1. [ESLint](#eslint)
 
 ## 1. Create a Hello World project
 
@@ -105,7 +107,7 @@ Add an item in `bin` field:
 
 Run `npm link` and type `command2` in terminal.
 
-## `.editorconfig`
+## 3. `.editorconfig`
 
 Use `.editorconfig` to unify the style of editor in your team.
 
@@ -122,9 +124,34 @@ indent_size = 2
 indent_style = space
 insert_final_newline = true
 trim_trailing_whitespace = true
+
+# Markdown Files
+[*.md]
+trim_trailing_whitespace = false
+
+# Batch Files
+[*.{cmd,bat}]
+end_of_line = crlf
 ```
 
-## Must-have librarys
+With two exceptions:
+
+* Windows batch files(`.cmd` and `.bat`) require `CRLF` line endings.
+* Do NOT trim trailing whtespaces for Markdown files.
+
+**`LF` or `CRLF` ?**
+
+Better add a `.gitattributes` file to the root of your repository to force everything to be `LF`, except for Windows batch files that require `CRLF`:
+
+```text
+* text=auto eol=lf
+*.{cmd,[cC][mM][dD]} text eol=crlf
+*.{bat,[bB][aA][tT]} text eol=crlf
+```
+
+## 4. ESLint
+
+## 5. Must-have librarys
 
 * [chalk](https://www.npmjs.com/package/chalk): colorizes text on terminal.
 * [yargs](https://www.npmjs.com/package/yargs): parsing arguments and generating an elegant user interface.
@@ -135,3 +162,8 @@ Install:
 npm install --save chalk yargs
 npm install --save-dev @types/chalk @types/yargs
 ```
+
+
+## References
+
+* [Resolving Git line ending issues in containers (resulting in many modified files)](https://code.visualstudio.com/docs/remote/troubleshooting#_resolving-git-line-ending-issues-in-containers-resulting-in-many-modified-files)
