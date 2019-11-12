@@ -1,0 +1,17 @@
+.editorconfig
+.eslintignore
+.eslintrc.js
+.gitattributes
+.gitignore
+.prettierignore
+.prettierrc
+.travis.yml
+
+test
+.github
+.vscode
+
+**/*.spec.*
+coverage
+.nyc_output
+*.log

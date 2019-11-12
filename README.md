@@ -10,6 +10,7 @@ Node.js CLI project template.
 1. [ESLint](#4-eslint)
 1. [Prettier](#5-prettier)
 1. [Must-have libraries](#6-must-have-libraries)
+1. [Publish to npm](#7-publish-to-npm)
 
 ## 1. Create a Hello World project
 
@@ -84,7 +85,7 @@ Run `npm link` and type `node-cli-starter` in terminal.
 
 ## 3. `.editorconfig`
 
-Use `.editorconfig` to unify the style of editor in your team.
+EditorConfig helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs.
 
 Add a new file `.editoconfig` at the root directory of this project:
 
@@ -198,6 +199,14 @@ For more details see <https://prettier.io/docs/en/integrating-with-linters.html>
 ### 6.3 ASCII banner
 
 - [figlet](https://www.npmjs.com/package/figlet): Get a nice ASCII banner from a string.
+
+## 7. Publish to npm
+
+First, use a `.npmignore` file to keep stuff out of your package. See [Keeping files out of your package](https://docs.npmjs.com/misc/developers#keeping-files-out-of-your-package) to learn more about `.npmignore`.
+
+Second, run `npm login` to login.
+
+Last, run `npm publish` to publish your package to npm.
 
 ## References
 
