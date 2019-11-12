@@ -8,6 +8,7 @@
     "start": "node ./src/index.js",
     "lint": "eslint . --ext '.js,.jsx,.ts,.tsx,.md'",
     "prettier": "prettier -c --write '**/*'",
+    "check-type": "tsc -p tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,8 +26,16 @@
     "url": "https://github.com/soulmachine/node-cli-starter/issues"
   },
   "homepage": "https://github.com/soulmachine/node-cli-starter",
-  "dependencies": {},
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "figlet": "^1.2.4",
+    "yargs": "^14.2.0"
+  },
   "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/figlet": "^1.2.0",
+    "@types/node": "^12.12.7",
+    "@types/yargs": "^13.0.3",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.6.0",
     "eslint-config-airbnb-base": "^14.0.0",
@@ -36,6 +45,7 @@
     "eslint-plugin-jest": "^23.0.3",
     "eslint-plugin-markdown": "^1.0.1",
     "eslint-plugin-prettier": "^3.1.1",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.2"
   }
 }

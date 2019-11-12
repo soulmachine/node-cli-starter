@@ -11,6 +11,7 @@ Node.js CLI project template.
 1. [Prettier](#5-prettier)
 1. [Must-have libraries](#6-must-have-libraries)
 1. [Publish to npm](#7-publish-to-npm)
+1. [Static type checking on JS files](#8-static-type-checking-on-js-files)
 
 ## 1. Create a Hello World project
 
@@ -175,7 +176,7 @@ Add a command in `scripts`:
 
 Make VS Code formats code automatically on save:
 
-```text
+```json
 "files.autoSave": "onFocusChange",
 "eslint.autoFixOnSave": true,
 "editor.formatOnSave": true,
@@ -189,16 +190,63 @@ For more details see <https://prettier.io/docs/en/integrating-with-linters.html>
 
 ### 6.1 Parse command line arguments
 
-- [yargs](https://www.npmjs.com/package/yargs): parsing arguments and generating an elegant user interface.
-- [Commander.js](https://www.npmjs.com/package/commander)
+Install `yargs`:
+
+```bash
+npm install yargs --save
+npm install @types/yargs --save-dev
+```
+
+Added the following code to `./src/index.js`:
+
+```typescript
+const yargs = require('yargs');
+
+const { argv } = yargs.options({
+  a: { type: 'boolean', default: false },
+  b: { type: 'string', demandOption: true },
+  c: { type: 'number', alias: 'chill' },
+  d: { type: 'array' },
+  e: { type: 'count' },
+  f: { choices: ['1', '2', '3'] },
+});
+
+console.info(argv);
+```
 
 ### 6.2 Colorize text on terminal
 
-- [chalk](https://www.npmjs.com/package/chalk): colorizes text on terminal.
+Install`chalk` :
+
+```bash
+npm install chalk --save
+npm install @types/chalk --save-dev
+```
+
+Add the following code to `./src/index.js`:
+
+```typescript
+const chalk = require('chalk');
+
+console.info(chalk.green('Green text'));
+```
 
 ### 6.3 ASCII banner
 
-- [figlet](https://www.npmjs.com/package/figlet): Get a nice ASCII banner from a string.
+Install `figlet`:
+
+```bash
+npm install figlet --save
+npm install @types/figlet --save-dev
+```
+
+Add the following code to `./src/index.js`:
+
+```typescript
+const figlet = require('figlet');
+
+console.log(chalk.green(figlet.textSync('node-cli-starter')));
+```
 
 ## 7. Publish to npm
 
@@ -207,6 +255,26 @@ First, use a `.npmignore` file to keep stuff out of your package. See [Keeping f
 Second, run `npm login` to login.
 
 Last, run `npm publish` to publish your package to npm.
+
+## 8. Static type checking on JS files
+
+After TypeScript 2.3, you can have static type checking on JavaScript code without rewriting them in TypeScript.
+
+Install TypeScript compiler and other types definitions:
+
+```bash
+npm install typescript @types/node --save-dev
+```
+
+In `tsconfig.json` set `allowJs` and `checkJs` to `true` to enable type checking on JavaScript code.
+
+Add a command `check-type` to `scripts`:
+
+```json
+"check-type": "tsc -p tsconfig.json",
+```
+
+One addtional benefit is that, vscode can provide rich Intellisense for your code!
 
 ## References
 
