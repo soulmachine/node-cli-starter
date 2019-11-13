@@ -76,11 +76,15 @@ First add the following line at the beginning of `index.js`:
 #!/usr/bin/env node
 ```
 
-Then add a `bin` field in `package.json`:
+Then add 2 properties in `package.json`:
 
 ```json
-"bin": "src/index.js"
+"bin": "src/index.js",
+"preferGlobal": "true",
 ```
+
+`bin` tells npm where your executable file is so that it can install it into the `PATH`. And `preferGlobal`, if set to `true`, will warn users if they try to install the package locally. `preferGlobal` is not necessary, but it can be nice to let users know that the package is a CLI tool and meant to be installed globally.
+
 
 Run `npm link` and type `node-cli-starter` in terminal.
 
@@ -285,3 +289,4 @@ One addtional benefit is that, vscode can provide rich Intellisense for your cod
 - <https://prettier.io/docs/en/configuration.html>
 - <https://prettier.io/docs/en/options.html>
 - [ant-design](https://github.com/ant-design/ant-design)
+- [Type Checking JavaScript Files - TypeScript](https://www.typescriptlang.org/docs/handbook/type-checking-javascript-files.html)

@@ -4,12 +4,16 @@
   "description": "Node.js CLI project template",
   "main": "src/index.js",
   "bin": "src/index.js",
+  "preferGlobal": true,
   "scripts": {
     "start": "node ./src/index.js",
     "lint": "eslint . --ext '.js,.jsx,.ts,.tsx,.md'",
     "prettier": "prettier -c --write '**/*'",
     "check-type": "tsc -p tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=10"
   },
   "repository": {
     "type": "git",
