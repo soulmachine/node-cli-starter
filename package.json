@@ -36,7 +36,6 @@
     "yargs": "^14.2.0"
   },
   "devDependencies": {
-    "@types/chalk": "^2.2.0",
     "@types/figlet": "^1.2.0",
     "@types/node": "^12.12.7",
     "@types/yargs": "^13.0.3",
